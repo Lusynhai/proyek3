@@ -1,4 +1,4 @@
-<x-app-layout>
+{{-- <x-app-layout>
 	<x-slot name="title">Activity Log</x-slot>
 
 	@if(session()->has('success'))
@@ -56,4 +56,4 @@
 		</table>
 		{{ $logs->links() }}
 	</x-card>
-</x-app-layout>
+</x-app-layout> --}}

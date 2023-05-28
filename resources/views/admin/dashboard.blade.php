@@ -17,13 +17,13 @@
             color="primary"
         />
         <x-card-sum 
-            text="Daftar Penyakit" 
+            text="Data Penyakit" 
             value="{{ App\Models\Penyakit::count() }}" 
             icon="th-list" 
             color="warning"
         />
         <x-card-sum 
-            text="Daftar Gejala" 
+            text="Data Gejala" 
             value="{{ App\Models\Gejala::count() }}" 
             icon="th-list" 
             color="danger"
@@ -32,7 +32,7 @@
 
     <section class="row">
         {{-- log activity section --}}
-        <div class="col-md-6">
+        {{-- <div class="col-md-6">
             <x-card>
                 <x-slot name="title">
                     Log Activity
@@ -52,7 +52,7 @@
                         @endforelse
                     </tbody>
                 </table>
-            </x-card>
+            </x-card> --}}
         </div>
 
         {{-- chart section --}}

@@ -1,9 +1,9 @@
 <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
         <div class="sidebar-brand-icon">
-            <img src="{{ asset((setting('logo')) ? '/storage/'.setting('logo') : 'dist/img/logo/logo2.png') }}">
+            <img src="{{ asset((setting('logo')) ? '/storage/'.setting('logo') : 'dist/img/logo/sipaku.png') }}">
         </div>
-        <div class="sidebar-brand-text mx-3">SIDAPM</div>
+        <div class="sidebar-brand-text mx-3">SIPAKU</div>
     </a>
     <hr class="sidebar-divider my-0">
 
@@ -17,10 +17,48 @@
 
     <hr class="sidebar-divider mt-3 mb-0">
     @endcan
+
+    @can('member-list')
+    <hr class="sidebar-divider mt-3 mb-0">
+    
+    <x-nav-link 
+        text="Data Pengguna" 
+        icon="users" 
+        url="{{ route('admin.member') }}"
+        active="{{ request()->routeIs('admin.member') ? ' active' : '' }}"
+    />
+    @endcan
+
+    @can('gejala-list')
+    <x-nav-link 
+        text="Data Gejala" 
+        icon="th-list" 
+        url="{{ route('admin.gejala') }}"
+        active="{{ request()->routeIs('admin.gejala') ? ' active' : '' }}"
+    />
+    @endcan
+
+    @can('penyakit-list')
+    <x-nav-link 
+        text="Data Penyakit" 
+        icon="th-list" 
+        url="{{ route('admin.penyakit') }}"
+        active="{{ request()->routeIs('admin.penyakit') ? ' active' : '' }}"
+    />
+    @endcan
+
+    @can('rules-list')
+    <x-nav-link 
+        text="Rule" 
+        icon="briefcase-medical" 
+        url="{{ route('admin.rules', 1) }}"
+        active="{{ request()->routeIs('admin.rules') ? ' active' : '' }}"
+    />
+    @endcan
     
     @can('diagnosa')    
     <x-nav-link 
-        text="Diagnosa" 
+        text="Diagnosa Penyakit" 
         icon="stethoscope" 
         url="{{ route('admin.diagnosa') }}"
         active="{{ request()->routeIs('admin.diagnosa') ? ' active' : '' }}"
@@ -35,45 +73,5 @@
         active="{{ request()->routeIs('admin.riwayat.daftar') ? ' active' : '' }}"
     />
     @endcan
-
-    @can('member-list')
-    <hr class="sidebar-divider mt-3 mb-0">
-    
-    <x-nav-link 
-        text="Daftar User" 
-        icon="users" 
-        url="{{ route('admin.member') }}"
-        active="{{ request()->routeIs('admin.member') ? ' active' : '' }}"
-    />
-    @endcan
-
-    @can('penyakit-list')
-    <x-nav-link 
-        text="Daftar Penyakit" 
-        icon="th-list" 
-        url="{{ route('admin.penyakit') }}"
-        active="{{ request()->routeIs('admin.penyakit') ? ' active' : '' }}"
-    />
-    @endcan
-
-    @can('gejala-list')
-    <x-nav-link 
-        text="Daftar Gejala" 
-        icon="th-list" 
-        url="{{ route('admin.gejala') }}"
-        active="{{ request()->routeIs('admin.gejala') ? ' active' : '' }}"
-    />
-    @endcan
-
-    @can('rules-list')
-    <x-nav-link 
-        text="Basis Rules" 
-        icon="briefcase-medical" 
-        url="{{ route('admin.rules', 1) }}"
-        active="{{ request()->routeIs('admin.rules') ? ' active' : '' }}"
-    />
-    @endcan
-    
-    <hr class="sidebar-divider mb-0">
 
 </ul>
